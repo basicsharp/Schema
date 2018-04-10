@@ -12,6 +12,7 @@ function json_encode_utf8($arr, $options = 0) {
   return mb_decode_numericentity(json_encode($arr, $options), array (0x80, 0xffff, 0, 0xffff), 'UTF-8');
 }
 
+// https://gist.github.com/NickBeeuwsaert/7568762
 function json_encode_pretty($arr, $indent="    ", $characters=array(", ", ": "), $depth=0, $eol=PHP_EOL) {
   //You'd think that with the plethora of functions PHP has for array operations, they'd have one to check
   // if an array is associative or not
@@ -40,6 +41,7 @@ function json_encode_pretty($arr, $indent="    ", $characters=array(", ", ": "),
   return $result;
 }
 
+// https://stackoverflow.com/questions/6743554/slash-issue-with-json-encode-why-and-how-to-solve-it
 function json_unescape_slashes($json_str) {
   return str_replace('\\/', '/', $json_str);
 }
