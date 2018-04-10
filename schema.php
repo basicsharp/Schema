@@ -86,12 +86,12 @@ final class Schema_WP {
 		if ( ! isset( self::$instance ) && ! ( self::$instance instanceof SCHEMA_WP ) ) {
 			self::$instance = new SCHEMA_WP;
 
-			if( version_compare( PHP_VERSION, '5.4', '<' ) ) {
+			// if( version_compare( PHP_VERSION, '5.4', '<' ) ) {
 
-				add_action( 'admin_notices', array( 'SCHEMA_WP', 'below_php_version_notice' ) );
+			// 	add_action( 'admin_notices', array( 'SCHEMA_WP', 'below_php_version_notice' ) );
 
-				return self::$instance;
-			}
+			// 	return self::$instance;
+			// }
 
 			self::$instance->setup_constants();
 			self::$instance->includes();
@@ -177,6 +177,7 @@ final class Schema_WP {
 	 * @return void
 	 */
 	private function includes() {
+		require_once SCHEMAWP_PLUGIN_DIR . 'includes/json-encode-polyfill.php';
 		
 		global $schema_wp_options;
 		

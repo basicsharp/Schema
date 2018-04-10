@@ -35,6 +35,7 @@ function schema_wp_output_taxonomy() {
 			$output = "\n\n";
 			$output .= '<!-- This site is optimized with the Schema plugin v'.SCHEMAWP_VERSION.' - https://schema.press -->';
 			$output .= "\n";
+			$output .= '<script type="application/ld+json">' . json_encode_utf8($json) . '</script>';
 			$output .= '<script type="application/ld+json">' . json_encode($json, JSON_UNESCAPED_UNICODE) . '</script>';
 			$output .= "\n\n";
 		}

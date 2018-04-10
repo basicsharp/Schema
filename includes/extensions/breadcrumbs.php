@@ -405,7 +405,8 @@ if ( ! class_exists( 'SCHEMA_JSON_LD_Breadcrumbs' ) ) {
 				$schema_output .= "\n\n";
 				$schema_output .= '<!-- This site is optimized with the Schema plugin v'.SCHEMAWP_VERSION.' - https://schema.press -->';
 				$schema_output .= "\n";
-				$schema_output .= '<script type="application/ld+json">' . json_encode( $schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . '</script>';
+				$schema_output .= '<script type="application/ld+json">' . json_unescape_slashes( json_encode_pretty( $schema ) ) . '</script>';
+				// $schema_output .= '<script type="application/ld+json">' . json_encode( $schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . '</script>';
 				$schema_output .= "\n\n";
 			}
 

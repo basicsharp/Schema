@@ -39,7 +39,8 @@ function schema_wp_output_knowledge_graph() {
 		$knowledge_graph .= "\n\n";
 		$knowledge_graph .= '<!-- This site is optimized with the Schema plugin v'.SCHEMAWP_VERSION.' - https://schema.press -->';
 		$knowledge_graph .= "\n";
-		$knowledge_graph .= '<script type="application/ld+json">' . json_encode($json, JSON_UNESCAPED_UNICODE) . '</script>';
+		$knowledge_graph .= '<script type="application/ld+json">' . json_encode_utf8($json) . '</script>';
+		// $knowledge_graph .= '<script type="application/ld+json">' . json_encode($json, JSON_UNESCAPED_UNICODE) . '</script>';
 		$knowledge_graph .= "\n\n";
 	}
 		
